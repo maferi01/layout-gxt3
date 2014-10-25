@@ -1,0 +1,100 @@
+<!--
+
+    Sencha GXT 3.1.0 - Sencha for GWT
+    Copyright(c) 2007-2014, Sencha, Inc.
+    licensing@sencha.com
+
+    http://www.sencha.com/products/gxt/license/
+
+-->
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+        xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+        xmlns:widget="urn:import:com.myself.client.binder"
+
+        >
+
+    <ui:style>
+        .centerMargin {
+        margin: 10px;
+        }
+    </ui:style>
+
+    <ui:with field="themeStyles" type="com.sencha.gxt.core.client.resources.ThemeStyles.Styles" />
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="outerMargins">
+        <ui:attributes top="4" right="4" bottom="4" left="4" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="centerMargins">
+        <ui:attributes top="0" right="4" bottom="0" left="4" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="topData">
+        <ui:attributes width="1" height=".4d" margins="{outerMargins}" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="middleData">
+        <ui:attributes width="1" height=".2d" margins="{centerMargins}" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="bottomData">
+        <ui:attributes width="1" height=".4d" margins="{outerMargins}" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData" field="topDatah">
+        <ui:attributes width=".4d" height="1" margins="{outerMargins}" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData" field="middleDatah">
+        <ui:attributes width=".4d" height="1" margins="{centerMargins}" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData" field="bottomDatah">
+        <ui:attributes width=".2d" height="1" margins="{outerMargins}" />
+    </ui:with>
+
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="outerData" />
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="northData" />
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="westData" />
+    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData" />
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="eastData" />
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="southData" />
+
+    <container:SimpleContainer>
+        <container:child layoutData="{outerData}">
+            <container:BorderLayoutContainer ui:field="con" borders="true">
+                <container:north layoutData="{northData}">
+                    <gxt:ContentPanel headingText="Header" resize="true">
+                    <container:HorizontalLayoutContainer>
+                        <container:child layoutData="{topDatah}">
+                            <g:Label text="Test Label 1" styleName="pad-text white-bg {themeStyles.border}" />
+                        </container:child>
+                        <container:child layoutData="{middleDatah}">
+                            <g:Label text="Test Label 2" styleName="pad-text white-bg {themeStyles.border}" />
+                        </container:child>
+                        <container:child layoutData="{bottomDatah}">
+                            <g:Label text="Test Label 3" styleName="pad-text white-bg {themeStyles.border}" />
+                        </container:child>
+                    </container:HorizontalLayoutContainer>
+                    </gxt:ContentPanel>
+                </container:north>
+                <container:west layoutData="{westData}">
+                    <gxt:ContentPanel>
+                        <!--<widget:LayoutChild></widget:LayoutChild>-->
+                        <widget:TreeT></widget:TreeT>
+                      </gxt:ContentPanel>
+                </container:west>
+                <container:center layoutData="{centerData}">
+                    <gxt:ContentPanel headingText="BorderLayout UiBinder Example" resize="false">
+                        <g:FlexTable ui:field="table" addStyleNames="{style.centerMargin}" cellSpacing="8" cellPadding="4" />
+                    </gxt:ContentPanel>
+                </container:center>
+                <container:east layoutData="{eastData}" >
+                    <container:SimpleContainer ui:field="east"/>
+                </container:east>
+                <container:south layoutData="{southData}">
+                    <gxt:ContentPanel ui:field="footer" />
+                </container:south>
+            </container:BorderLayoutContainer>
+        </container:child>
+    </container:SimpleContainer>
+</ui:UiBinder>

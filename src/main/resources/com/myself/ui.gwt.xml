@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='ui'>
+
+    <!-- We need the JUnit module in the main module, -->
+    <!-- otherwise eclipse complains (Google plugin bug?) -->
+    <inherits name='com.google.gwt.junit.JUnit' />
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User' />
+
+    <!-- Inherit the GXT staff . -->
+    <!-- 	<inherits name='com.extjs.gxt.layoutmyapp.GXT' /> -->
+    <inherits name='com.sencha.gxt.ui.GXT'/>
+
+
+
+    <set-property name="gxt.user.agent" value="chrome" />
+    <!--<collapse-property name="gxt.user.agent" values="gecko1_9" />-->
+
+    <!-- 	<inherits name='com.google.gwt.user.theme.standard.Standard' /> -->
+    <!-- Specify the app entry point class. -->
+    <entry-point class='com.myself.client.ui' />
+
+    <inherits name='com.mvp4g.Mvp4gModule'/>
+
+    <!-- Specify the paths for translatable code -->
+
+    <source path='client'/>
+    <source path='shared'/>
+
+</module>
